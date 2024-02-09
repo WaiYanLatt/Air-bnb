@@ -65,7 +65,7 @@
         </button>
       </div>
     </div>
-    <div class="container mx-auto px-5 mt-56">
+    <div class="container mx-auto px-5 mt-56 mb-28">
       <div class="grid grid-cols-4 gap-4">
         <HouseCard :result="result" v-for="result in useStay.results" :key="result.id" />
       </div>

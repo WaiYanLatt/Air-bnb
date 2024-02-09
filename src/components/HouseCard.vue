@@ -16,6 +16,7 @@ export default {
   },
   data() {
     return {
+      showFav : false,
       settings: {
         itemsToShow: 1,
         snapAlign: "center",
@@ -36,11 +37,17 @@ export default {
       },
     };
   },
+  methods : {
+    fullHeart() {
+       this.showFav = !this.showFav;
+    }
+  }
 };
 </script>
 
 <template>
-  <div class="w-full">
+     <router-link :to="`/${result.id}`">
+      <div class="w-full">
     <!-- <object :data="result.xl_picture_url" type="image/png" class="rounded-lg shadow-lg w-full h-[250px] object-cover duration-500 cursor-pointer hover:scale-105">
       <img src="/sky.gif"  >
     </object> -->
@@ -50,8 +57,12 @@ export default {
           <img
             :src="result.xl_picture_url"
             alt=""
-            class="rounded-lg shadow-lg w-full h-[250px] object-cover duration-500 cursor-pointer hover:scale-105"
+            class=" relative rounded-lg shadow-lg w-full h-[250px] object-cover duration-500 cursor-pointer hover:scale-105"
           />
+          <button class="bg-white rounded-xl absolute top-3 font-semibold left-5 py-2 px-5" v-show="showFav === true">
+             Guest Favorite
+          </button>
+          <i class="fa-regular text-red-500 text-2xl cursor-pointer fa-heart absolute top-5 right-5" :class="{'fa-solid' : showFav === true}" @click="fullHeart"></i>
         </div>
       </Slide>
 
@@ -77,4 +88,5 @@ export default {
       <span class="text-gray-500">night</span>
     </p>
   </div>
+     </router-link>
 </template>

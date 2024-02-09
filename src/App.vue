@@ -1,5 +1,6 @@
 <script>
 import Navbar from './components/Navbar.vue';
+import Footer from './components/Footer.vue';
    export default {
        data() {
          return {
@@ -8,6 +9,7 @@ import Navbar from './components/Navbar.vue';
        },
        components : {
          Navbar : Navbar,
+         Footer : Footer,
        }
    }
 </script>
@@ -17,5 +19,6 @@ import Navbar from './components/Navbar.vue';
     <div class="container-fluid mx-auto">
        <Navbar/>
        <router-view></router-view>
+       <Footer/>
     </div>
 </template>

@@ -7,6 +7,11 @@ const routes = [
         component : () => import('./views/StayView.vue')
      },
      {
+        path : '/:id',
+        name : 'singleview',
+        component : () => import('./views/Singlepage.vue')
+     },
+     {
       path : '/exp',
       name : 'exprience',
       component : () => import('./views/Exprience.vue')
