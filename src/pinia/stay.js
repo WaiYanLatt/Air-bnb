@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 const useStay = defineStore("stay", {
   state: () => {
     return {
-      results: [],
+      results: null,
     };
   },
   actions: {

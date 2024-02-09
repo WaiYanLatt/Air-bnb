@@ -1,27 +1,30 @@
 <script>
-import SingleRoomCard from '@/components/SingleRoomCard.vue';
-import useStay from '@/pinia/stay.js';
+import useStay from "@/pinia/stay.js";
 
 export default {
-    data() {
-        return {
-            useStay: useStay(),
-        };
+  data() {
+    return {
+      useStay: useStay(),
+    };
+  },
+  async created() {
+      const results = await this.useStay.getStay();
+      this.useStay.setStay(results);
+  },
+  computed: {
+    currentHome() {
+        const homeId = Number(this.$route.params.id)
+        return homeId;
     },
-    async created() {
-        const results = await this.useStay.getStay();
-        this.useStay.setStay(results);
-    },
-    components: { SingleRoomCard }
-}
+  },
+};
 </script>
 
-
-
 <template>
-    <div class="mt-56">
-        <div v-for="result in useStay.results">
-            <SingleRoomCard :result="result"/>
-        </div>
-    </div>
+  <div class="mt-56">
+     {{ currentHome }}
+  </div>
 </template>
+
+
+
