@@ -51,10 +51,90 @@ export default {
       <img src="/sky.gif"  >
     </object> -->
     <Carousel v-bind="settings" :breakpoints="breakpoints">
-      <Slide v-for="slide in 5" :key="slide">
+      <Slide v-for="slide in 1" :key="slide">
         <div class="carousel__item w-full">
           <img
             :src="result.xl_picture_url"
+            alt=""
+            class="relative rounded-lg shadow-lg w-full h-[250px] object-cover duration-500 cursor-pointer hover:scale-105"
+          />
+          <button
+            class="bg-white rounded-xl absolute top-3 font-semibold left-5 py-2 px-5"
+            v-show="showFav === true"
+          >
+            Guest Favorite
+          </button>
+          <i
+            class="fa-regular text-red-500 text-2xl cursor-pointer fa-heart absolute top-5 right-5"
+            :class="{ 'fa-solid': showFav === true }"
+            @click="fullHeart"
+          ></i>
+        </div>
+      </Slide>
+      <Slide v-for="slide in 1" :key="slide">
+        <div class="carousel__item w-full">
+          <img
+            src="/room1.webp"
+            alt=""
+            class="relative rounded-lg shadow-lg w-full h-[250px] object-cover duration-500 cursor-pointer hover:scale-105"
+          />
+          <button
+            class="bg-white rounded-xl absolute top-3 font-semibold left-5 py-2 px-5"
+            v-show="showFav === true"
+          >
+            Guest Favorite
+          </button>
+          <i
+            class="fa-regular text-red-500 text-2xl cursor-pointer fa-heart absolute top-5 right-5"
+            :class="{ 'fa-solid': showFav === true }"
+            @click="fullHeart"
+          ></i>
+        </div>
+      </Slide>
+      <Slide v-for="slide in 1" :key="slide">
+        <div class="carousel__item w-full">
+          <img
+            src="/room2.webp"
+            alt=""
+            class="relative rounded-lg shadow-lg w-full h-[250px] object-cover duration-500 cursor-pointer hover:scale-105"
+          />
+          <button
+            class="bg-white rounded-xl absolute top-3 font-semibold left-5 py-2 px-5"
+            v-show="showFav === true"
+          >
+            Guest Favorite
+          </button>
+          <i
+            class="fa-regular text-red-500 text-2xl cursor-pointer fa-heart absolute top-5 right-5"
+            :class="{ 'fa-solid': showFav === true }"
+            @click="fullHeart"
+          ></i>
+        </div>
+      </Slide>
+      <Slide v-for="slide in 1" :key="slide">
+        <div class="carousel__item w-full">
+          <img
+            src="/room3.webp"
+            alt=""
+            class="relative rounded-lg shadow-lg w-full h-[250px] object-cover duration-500 cursor-pointer hover:scale-105"
+          />
+          <button
+            class="bg-white rounded-xl absolute top-3 font-semibold left-5 py-2 px-5"
+            v-show="showFav === true"
+          >
+            Guest Favorite
+          </button>
+          <i
+            class="fa-regular text-red-500 text-2xl cursor-pointer fa-heart absolute top-5 right-5"
+            :class="{ 'fa-solid': showFav === true }"
+            @click="fullHeart"
+          ></i>
+        </div>
+      </Slide>
+      <Slide v-for="slide in 1" :key="slide">
+        <div class="carousel__item w-full">
+          <img
+            src="/room4.webp"
             alt=""
             class="relative rounded-lg shadow-lg w-full h-[250px] object-cover duration-500 cursor-pointer hover:scale-105"
           />

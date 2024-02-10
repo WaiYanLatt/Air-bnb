@@ -1,17 +1,19 @@
 <script>
-
-import Search from '@/components/Search.vue'
+import Search from "@/components/Search.vue";
 
 export default {
   data() {
     return {
       isNavshow: true,
-      isSecond : true,
-      show : false,
+      isSecond: true,
+      show: false,
+      stay: true,
+      onlineExp: false,
+      exp: false,
     };
   },
-  components : {
-    Search : Search,
+  components: {
+    Search: Search,
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
@@ -31,24 +33,39 @@ export default {
         this.isSecond = true;
       }
       if (window.scrollY > 50) {
-            this.isNavshow = false;
+        this.isNavshow = false;
       }
       if (window.scrollY > 100) {
         this.isSecond = false;
       }
     },
-    showForm(){
-      this.show = true
+    showForm() {
+      this.show = true;
     },
-    unShow(){
-      this.show = false
-    }
+    unShow() {
+      this.show = false;
+    },
+    showStay() {
+      this.stay = true;
+      this.exp = false;
+      this.onlineExp = false;
+    },
+    showExp() {
+      this.stay = false;
+      this.exp = true;
+      this.onlineExp = false;
+    },
+    showOnlineExp() {
+      this.stay = false;
+      this.exp = false;
+      this.onlineExp = true;
+    },
   },
 };
 </script>
 
 <template>
-  <nav class="fixed top-0 z-20 w-full ">
+  <nav class="fixed top-0 z-20 w-full">
     <div
       class="bg-gray-100 py-5 px-28 border-b-2 border-gray-200"
       v-show="isNavshow === true"
@@ -58,21 +75,41 @@ export default {
       </h1>
     </div>
     <div
-      class="bg-white py-5 px-16 flex justify-center items-center top-0  "
+      class="bg-white py-2 px-16 flex justify-center items-center top-0"
       v-show="isSecond === true"
     >
       <div class="flex items-center">
-        <h1 class="font-semibold text-md mr-3">Stays</h1>
-        <h1 class="font-semibold text-md text-gray-500 mr-3">Experiences</h1>
-        <h1 class="font-semibold text-md text-gray-500 mr-3">
-          Online Experiences
-        </h1>
+        <router-link to="/">
+          <button
+            class="font-semibold cursor-pointer text-md text-gray-500 mr-3 hover:bg-slate-100 duration-500 px-5 py-2 rounded-full"
+            :class="{ '!text-black underline': stay === true }"
+            @click="showStay"
+          >
+            Stays
+          </button>
+        </router-link>
+        <button
+          class="font-semibold cursor-pointer text-md text-gray-500 mr-3 hover:bg-slate-100 duration-500 px-5 py-2 rounded-full"
+          :class="{ '!text-black underline': exp === true }"
+          @click="showExp"
+        >
+          Experiences
+        </button>
+        <router-link to="/exp">
+          <button
+            class="font-semibold cursor-pointer text-md text-gray-500 mr-3 hover:bg-slate-100 duration-500 px-5 py-2 rounded-full"
+            :class="{ '!text-black underline': onlineExp === true }"
+            @click="showOnlineExp"
+          >
+            Online Experiences
+          </button>
+        </router-link>
       </div>
     </div>
     <div
-      class="bg-white container-fluid border-b flex px-16 py-2 items-center "
-      :class="{'shadow-lg' : isNavshow === true}"
-      >
+      class="bg-white container-fluid border-b flex px-16 py-2 items-center"
+      :class="{ 'shadow-lg': isNavshow === true }"
+    >
       <img src="/airbnb.svg" alt="" class="w-24 h-10 mr-56" />
       <div
         class="shadow-md border rounded-full overflow-hidden flex w-[1800px]"
@@ -96,7 +133,10 @@ export default {
         </button>
         <div class="border my-1 mx-3 border-gray-300"></div>
         <!-- search icon -->
-        <button @click="showForm" class="bg-red-500 h-10 w-10 rounded-full ml-10">
+        <button
+          @click="showForm"
+          class="bg-red-500 h-10 w-10 rounded-full ml-10"
+        >
           <i class="fa-solid fa-magnifying-glass text-white"></i>
         </button>
       </div>
@@ -124,11 +164,14 @@ export default {
       </div>
     </div>
     <!-- Model Box -->
-    <div v-show="show === true" class="bg-white  object-cover bg-no-repeat animate__backInUp animate__animated rounded-lg border shadow-xl h-auto w-[700px] absolute z-10 top-28 left-[22%] p-10">
-       <h1 class="text-right text-red-500 cursor-pointer" @click="unShow">
+    <div
+      v-show="show === true"
+      class="bg-white object-cover bg-no-repeat animate__backInUp animate__animated rounded-lg border shadow-xl h-auto w-[700px] absolute z-10 top-28 left-[22%] p-10"
+    >
+      <h1 class="text-right text-red-500 cursor-pointer" @click="unShow">
         <i class="fa-solid fa-xmark mb-5 text-xl"></i>
       </h1>
-      <Search/>
+      <Search />
     </div>
   </nav>
 </template>

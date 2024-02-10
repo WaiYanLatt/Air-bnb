@@ -13,8 +13,9 @@ export default {
   },
   computed: {
     currentHome() {
-        const homeId = Number(this.$route.params.id)
-        return homeId;
+        const homeId = Number(this.$route.params.id);
+        const home = this.useStay.results.find((res) => res.id === homeId);
+        return home;
     },
   },
 };
