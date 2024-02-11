@@ -151,7 +151,6 @@ export default {
           ></i>
         </div>
       </Slide>
-
       <template #addons>
         <Navigation />
       </template>
@@ -171,9 +170,14 @@ export default {
       </p>
     </div>
     <p class="font-semibold">
-      <i class="fa-solid fa-euro-sign"></i>
-      {{ result.price }}
-      <span class="text-gray-500">night</span>
+      <i class="fa-solid fa-euro-sign ml-2"></i>
+       <span v-show="result.price !== null" class="mx-1">
+         {{ result.price }}
+       </span>
+       <span v-show="result.price === null">
+         545
+       </span>
+      <span class="text-gray-500 mr-2">night</span>
     </p>
   </div>
 </template>

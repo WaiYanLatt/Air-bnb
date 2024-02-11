@@ -7,7 +7,7 @@ export default {
       isNavshow: true,
       isSecond: true,
       show: false,
-      stay: true,
+      stay: false,
       onlineExp: false,
       exp: false,
     };
