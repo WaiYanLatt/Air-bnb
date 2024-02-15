@@ -102,31 +102,31 @@ export default {
         alt=""
         class="w-48 h-48 object-cover absolute"
       />
-      <div class="right-32 absolute">
-        <h1 class="font-semibold text-white text-lg mt-2">
+      <div class="right-7 lg:right-32 absolute">
+        <h1 class="font-semibold text-white lg:text-lg text-sm mt-2">
           City Name -
           <span class="text-white">
             {{ weather.name }}
           </span>
         </h1>
-        <h1 class="font-semibold text-white text-lg mt-2">
+        <h1 class="font-semibold text-white lg:text-lg text-sm mt-2">
           Weather Condition -
           <span class="text-white">
             {{ weather.weather[0].main }}
           </span>
         </h1>
-        <h1 class="font-semibold text-white text-lg mt-2">
+        <h1 class="font-semibold text-white lg:text-lg text-sm mt-2">
           Tempreature -
           <span class="text-white">
             ( {{ Math.round(weather.main.temp) }} ℃ )
           </span>
           <i class="fa-solid fa-temperature-three-quarters text-sky-500"></i>
         </h1>
-        <h1 class="font-semibold text-white text-lg mt-2">
+        <h1 class="font-semibold text-white lg:text-lg text-sm mt-2">
           Humidity -
           <span class="text-white"> {{ weather.main.humidity }} % </span>
         </h1>
-        <h1 class="font-semibold text-white text-lg mt-2">
+        <h1 class="font-semibold text-white lg:text-lg text-sm mt-2">
           Wind Speed -
           <span class="text-white"> {{ weather.wind.speed }} km/h </span>
         </h1>
@@ -134,28 +134,16 @@ export default {
     </div>
     <div v-if="weather">
       <p
-        v-show="weather.weather[0].main === 'Clear'"
+        v-show="weather.main.temp > 25 "
         class="font-semibold text-sky-500 text-lg mt-3 italic text-right"
       >
         Please Take Some Juice.🥤
       </p>
       <p
-        v-show="weather.weather[0].main === 'Rain'"
-        class="font-semibold text-orange-500 text-lg mt-3 italic text-right"
+        v-show="weather.main.temp < 25 "
+        class="font-semibold text-sky-500 text-lg mt-3 italic text-right"
       >
-        Please Take Some Umbrella 🌂 And Some Warm clothes.🧥
-      </p>
-      <p
-        v-show="weather.weather[0].main === 'Clouds'"
-        class="font-semibold text-orange-500 text-lg mt-3 italic text-right"
-      >
-        Please Take Some Warm clothes.🧥
-      </p>
-      <p
-        v-show="weather.weather[0].main === 'Mist'"
-        class="font-semibold text-orange-500 text-lg mt-3 italic text-right"
-      >
-        Please Take Some Warm clothes.🧥
+       Please Take Some Warm clothes.🧥
       </p>
     </div>
   </div>

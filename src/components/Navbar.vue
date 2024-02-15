@@ -67,7 +67,7 @@ export default {
 <template>
   <nav class="fixed top-0 z-20 w-full">
     <div
-      class="bg-gray-100 py-5 px-28 border-b-2 border-gray-200"
+      class="bg-gray-100 py-5 lg:px-28 px-5 border-b-2 border-gray-200"
       v-show="isNavshow === true"
     >
       <h1 class="font-bold underline text-md text-center cursor-pointer">
@@ -75,13 +75,13 @@ export default {
       </h1>
     </div>
     <div
-      class="bg-white py-2 px-16 flex justify-center items-center top-0"
+      class="bg-white py-2 lg:px-16 px-5 flex justify-center items-center top-0"
       v-show="isSecond === true"
     >
       <div class="flex items-center">
         <router-link to="/">
           <button
-            class="font-semibold cursor-pointer text-md text-gray-500 mr-3 hover:bg-slate-100 duration-500 px-5 py-2 rounded-full"
+            class="font-semibold cursor-pointer text-md text-gray-500 lg:mr-3 hover:bg-slate-100 duration-500 px-5 py-2 rounded-full"
             :class="{ '!text-black underline': stay === true }"
             @click="showStay"
           >
@@ -89,7 +89,7 @@ export default {
           </button>
         </router-link>
         <button
-          class="font-semibold cursor-pointer text-md text-gray-500 mr-3 hover:bg-slate-100 duration-500 px-5 py-2 rounded-full"
+          class="font-semibold cursor-pointer text-md text-gray-500 lg:mr-3 hover:bg-slate-100 duration-500 px-5 py-2 rounded-full"
           :class="{ '!text-black underline': exp === true }"
           @click="showExp"
         >
@@ -97,7 +97,7 @@ export default {
         </button>
         <router-link to="/exp">
           <button
-            class="font-semibold cursor-pointer text-md text-gray-500 mr-3 hover:bg-slate-100 duration-500 px-5 py-2 rounded-full"
+            class="font-semibold cursor-pointer text-md text-gray-500 lg:mr-3 hover:bg-slate-100 duration-500 px-5 py-2 rounded-full"
             :class="{ '!text-black underline': onlineExp === true }"
             @click="showOnlineExp"
           >
@@ -107,40 +107,42 @@ export default {
       </div>
     </div>
     <div
-      class="bg-white container-fluid border-b flex px-16 py-2 items-center"
+      class="bg-white container-fluid border-b flex lg:flex-row flex-col lg:px-16 px-5 py-2 items-center"
       :class="{ 'shadow-lg': isNavshow === true }"
     >
-      <img src="/airbnb.svg" alt="" class="w-24 h-10 mr-56" />
-      <div
-        class="shadow-md border rounded-full overflow-hidden flex w-[1800px]"
-      >
-        <button
-          class="font-semibold duration-500 hover:bg-gray-100 py-2 px-5 hover:rounded-full"
+      <div class="flex my-2">
+        <img src="/airbnb.svg" alt="" class="w-24 h-10 lg:mr-56 mr-10" />
+        <div
+          class="shadow-md border rounded-full overflow-hidden flex w-[200px] lg:w-[589px]"
         >
-          AnyWhere
-        </button>
-        <div class="border my-1 mx-3 border-gray-300"></div>
-        <button
-          class="font-semibold duration-500 hover:bg-gray-100 py-2 px-5 hover:rounded-full"
-        >
-          Any week
-        </button>
-        <div class="border my-1 mx-3 border-gray-300"></div>
-        <button
-          class="font-semibold duration-500 hover:bg-gray-100 py-2 px-5 hover:rounded-full"
-        >
-          Add Guests
-        </button>
-        <div class="border my-1 mx-3 border-gray-300"></div>
-        <!-- search icon -->
-        <button
-          @click="showForm"
-          class="bg-red-500 h-10 w-10 rounded-full ml-10"
-        >
-          <i class="fa-solid fa-magnifying-glass text-white"></i>
-        </button>
+          <button
+            class="font-semibold duration-500 hover:bg-gray-100 py-2 px-5 hover:rounded-full"
+          >
+            AnyWhere
+          </button>
+          <div class="border my-1 lg:mx-3 border-gray-300"></div>
+          <button
+            class="font-semibold duration-500 hover:bg-gray-100 py-2 px-5 hover:rounded-full lg:block hidden"
+          >
+            Any week
+          </button>
+          <div class="border my-1 mx-3 border-gray-300 lg:block hidden"></div>
+          <button
+            class="font-semibold duration-500 hover:bg-gray-100 py-2 px-5 hover:rounded-full lg:block hidden"
+          >
+            Add Guests
+          </button>
+          <div class="border my-1 mx-3 border-gray-300 hidden"></div>
+          <!-- search icon -->
+          <button
+            @click="showForm"
+            class="bg-red-500 h-10 w-10 rounded-full ml-10"
+          >
+            <i class="fa-solid fa-magnifying-glass text-white"></i>
+          </button>
+        </div>
       </div>
-      <div class="flex items-center w-full pl-10">
+      <div class="lg:flex items-center w-full lg:pl-10 hidden">
         <button
           class="font-semibold mr-4 p-3 hover:bg-gray-100 rounded-full duration-500 hover:shadow-md"
         >
@@ -166,7 +168,7 @@ export default {
     <!-- Model Box -->
     <div
       v-show="show === true"
-      class="bg-white object-cover bg-no-repeat animate__backInUp animate__animated rounded-lg border shadow-xl h-auto w-[700px] absolute z-10 top-28 left-[22%] p-10"
+      class="bg-white object-cover bg-no-repeat animate__backInUp animate__animated rounded-lg border shadow-xl h-auto w-[370px] lg:w-[700px] absolute z-10 top-36 lg:top-28 left-3 lg:left-[22%] p-5 lg:p-10"
     >
       <h1 class="text-right text-red-500 cursor-pointer" @click="unShow">
         <i class="fa-solid fa-xmark mb-5 text-xl"></i>

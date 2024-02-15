@@ -19,15 +19,15 @@ export default {
 <template>
   <div
     v-show="show === true"
-    class="fixed bottom-0 w-full h-[350px] bg-white rounded-t-3xl shadow-lg border z-10 animate__animated animate__fadeInUp"
+    class="fixed bottom-0 w-full h-[400px] lg:h-[350px] bg-white rounded-t-3xl shadow-lg border z-10 animate__animated animate__fadeInUp"
   >
     <span
-      class="block ml-10 mt-3 text-3xl cursor-pointer"
+      class="block lg:ml-10 ml-5 mt-3 text-3xl cursor-pointer"
       @click="unShowFooter"
     >
       &times
     </span>
-    <div class="grid grid-cols-3 ml-24 mt-3">
+    <div class="grid lg:grid-cols-3 grid-cols-2 lg:ml-24 ml-5 mt-3">
       <div>
         <h1 class="font-semibold text-lg text-gray-700">Support</h1>
         <p class="font-semibold text-gray-500 mt-2">Help Center</p>
@@ -53,7 +53,7 @@ export default {
         <p class="font-semibold text-gray-500 mt-2">Hosting responsibly</p>
         <p class="font-semibold text-gray-500 mt-2">Airbnb-friendly apartments</p>
       </div>
-      <div>
+      <div class="hidden lg:block">
         <h1 class="font-semibold text-lg text-gray-700">Airbnb</h1>
         <p class="font-semibold text-gray-500 mt-2">Newsroom</p>
         <p class="font-semibold text-gray-500 mt-2">New features </p>
@@ -65,12 +65,12 @@ export default {
     </div>
   </div>
   <footer
-    class="container-fluid w-full bg-white border-t fixed bottom-0 shadow-lg py-2 px-16"
+    class="container-fluid w-full bg-white border-t fixed bottom-0 shadow-lg py-2 lg:px-16 px-5"
   >
     <div class="flex justify-between items-center">
       <div class="flex items-center">
         <h1 class="font-semibold">&copy 2024 Airbnb , Inc.</h1>
-        <ul class="font-medium text-sm flex *:ml-3">
+        <ul class="font-medium text-sm lg:flex *:ml-3 hidden">
           <li>Terms</li>
           <li>Site Map</li>
           <li>Privacy</li>
@@ -78,11 +78,11 @@ export default {
         </ul>
       </div>
       <div class="flex items-center *:ml-3">
-        <h1 class="font-semibold text-sm">
+        <h1 class="font-semibold text-sm lg:block hidden">
           <i class="fa-solid fa-globe"></i>
           English (US)
         </h1>
-        <h1 class="font-semibold text-sm">
+        <h1 class="font-semibold text-sm lg:block hidden">
           <i class="fa-solid fa-euro-sign"></i>
           EUR
         </h1>

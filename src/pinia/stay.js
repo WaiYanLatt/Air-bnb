@@ -13,7 +13,7 @@ const useStay = defineStore("stay", {
       };
 
       const response = await fetch(
-        "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/records?where=&order_by=last_scraped%20desc&limit=100&offset=0&timezone=UTC&include_links=false&include_app_metas=false",
+        "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/records?where&order_by=last_scraped%20desc&limit=100&offset=0&timezone=UTC&include_links=false&include_app_metas=false",
         options
       );
       const data = await response.json();
