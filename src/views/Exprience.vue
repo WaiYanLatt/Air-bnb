@@ -29,9 +29,9 @@ export default {
 </script>
 
 <template>
-  <div class="container-fluid mx-auto lg:px-16 px-5 mt-64">
+  <div class="container-fluid mx-auto lg:px-16 px-5 lg:mt-64 mt-72">
     <div class="flex justify-between items-center">
-      <h1 class="text-3xl font-semibold">New This Week</h1>
+      <h1 class="lg:text-2xl text-lg font-semibold">New This Week</h1>
       <div>
         <button
           class="h-10 w-10 text-black border rounded-full mr-2 cursor-not-allowed"
@@ -111,7 +111,43 @@ export default {
       </swiper-slide>
     </swiper>
     <div class="flex justify-between items-center">
-      <h1 class="text-3xl font-semibold">New This Week</h1>
+      <h1 class="lg:text-2xl text-lg font-semibold">Plan a trip with help from local Hosts around the world</h1>
+      <div class="flex">
+        <button
+          class="h-10 w-10 text-black border rounded-full mr-2 cursor-not-allowed"
+        >
+          <i class="fa-solid fa-angle-left"></i>
+        </button>
+        <button
+          class="h-10 w-10 text-black border rounded-full cursor-not-allowed"
+        >
+          <i class="fa-solid fa-angle-right"></i>
+        </button>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-6 lg:gap-3 gap-y-5 mt-10 mb-20">
+       <tripCard v-for="trip in useTrip.trips" :key="trip.id" :trip="trip"/>
+    </div>
+    <div class="flex justify-between items-center">
+      <h1 class="text-2xl font-semibold">Best sellers</h1>
+      <div>
+        <button
+          class="h-10 w-10 text-black border rounded-full mr-2 cursor-not-allowed"
+        >
+          <i class="fa-solid fa-angle-left"></i>
+        </button>
+        <button
+          class="h-10 w-10 text-black border rounded-full cursor-not-allowed"
+        >
+          <i class="fa-solid fa-angle-right"></i>
+        </button>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-6 lg:gap-3 gap-y-5 mt-10 mb-20">
+       <tripCard v-for="trip in useTrip.trips" :key="trip.id" :trip="trip"/>
+    </div>
+    <div class="flex justify-between items-center">
+      <h1 class="lg:text-2xl text-lg font-semibold">Make plans this weekend</h1>
       <div>
         <button
           class="h-10 w-10 text-black border rounded-full mr-2 cursor-not-allowed"
