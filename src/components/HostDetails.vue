@@ -158,13 +158,27 @@ export default {
         :slidesPerView="'auto'"
         :options="swiperOptions"
         :spaceBetween="10"
+        :breakpoints="{
+          '320': {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          '768': {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+          '1024': {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+        }"
         class="mySwiper my-5"
       >
         <swiper-slide class="overflow-hidden">
           <img src="/bed1.jpeg" class="w-full rounded-xl" />
         </swiper-slide>
         <swiper-slide>
-          <img src="/bed2.jpg" class="w-full max-h-[227px] rounded-xl" />
+          <img src="/bed2.jpg" class="w-full lg:max-h-[227px] max-h-[200px] rounded-xl" />
         </swiper-slide>
         <swiper-slide>
           <img src="/bed3.webp" class="w-full rounded-xl" />
@@ -175,7 +189,7 @@ export default {
     <!-- Enterties -->
     <div class="mt-5">
       <h1 class="my-5 font-semibold text-xl">What this place offers</h1>
-      <div class="grid grid-cols-4 gap-3">
+      <div class="grid lg:grid-cols-4 lg:gap-5 grid-cols-2 gap-3 pr-5 lg:pr-0">
         <div v-for="(amen, index) in currentHome.amenities" :key="index">
           <p class="font-semibold">{{ amen }}</p>
         </div>

@@ -1,10 +1,8 @@
 <script>
 import useStay from "@/pinia/stay.js";
-import Reviews from '@/components/Reviews.vue';
-import Package from '@/components/Package.vue';
-import HostDetails from '@/components/HostDetails.vue'
-
-
+import Reviews from "@/components/Reviews.vue";
+import Package from "@/components/Package.vue";
+import HostDetails from "@/components/HostDetails.vue";
 
 export default {
   components: {
@@ -32,47 +30,49 @@ export default {
 </script>
 
 <template>
-  <div class="mt-56 container-fluid mx-auto px-16 mb-32">
+  <div class="lg:mt-56 mt-72 container-fluid mx-auto lg:px-16 px-5 mb-32">
     <div>
       <h1 class="font-semibold text-2xl">
         {{ currentHome.room_type }} {{ currentHome.property_type }}
       </h1>
-      <div class="grid grid-cols-2 gap-2 mt-10 mb-5">
+      <div class="grid lg:grid-cols-2 grid-cols-1 gap-2 mt-10 mb-5">
         <div>
           <img
             :src="currentHome.xl_picture_url"
             alt=""
-            class="w-full object-cover h-[410px] rounded-s-xl hover:brightness-75 duration-500 cursor-pointer"
+            class="w-full object-cover lg:h-[410px] h-[250px] lg:rounded-e-none rounded-s-xl rounded-e-xl hover:brightness-75 duration-500 cursor-pointer"
           />
         </div>
         <div class="grid grid-cols-2 gap-2">
           <img
             :src="currentHome.xl_picture_url"
             alt=""
-            class="w-full object-cover h-[200px] hover:brightness-75 duration-500 cursor-pointer"
+            class="w-full object-cover hidden lg:block h-[200px] hover:brightness-75 duration-500 cursor-pointer"
           />
           <img
             :src="currentHome.xl_picture_url"
             alt=""
-            class="w-full object-cover h-[200px] hover:brightness-75 duration-500 cursor-pointer rounded-tr-xl"
+            class="w-full object-cover hidden lg:block h-[200px] hover:brightness-75 duration-500 cursor-pointer lg:rounded-tr-xl rounded-none"
           />
           <img
             :src="currentHome.xl_picture_url"
             alt=""
-            class="w-full object-cover h-[200px] hover:brightness-75 duration-500 cursor-pointer"
+            class="w-full object-cover hidden lg:block h-[200px] hover:brightness-75 duration-500 cursor-pointer"
           />
           <img
             :src="currentHome.xl_picture_url"
             alt=""
-            class="w-full object-cover h-[200px] hover:brightness-75 duration-500 cursor-pointer rounded-br-xl"
+            class="w-full object-cover hidden lg:block h-[200px] hover:brightness-75 duration-500 cursor-pointer lg:rounded-br-xl rounded-none"
           />
         </div>
       </div>
       <!-- Room Details -->
-      <div class="flex relative">
-        <div class="w-full pr-16">
+      <div class="flex lg:flex-row flex-col relative">
+        <div class="lg:w-[800px] w-full">
           <h1 class="font-semibold text-xl">{{ currentHome.name }}</h1>
-          <ul class="mt-1 font-semibold text-gray-800 text-md flex *:ml-1">
+          <ul
+            class="mt-1 lg:w-[410px] w-full font-semibold text-gray-800 text-md grid lg:grid-cols-4 grid-cols-2 *:ml-1"
+          >
             <li>{{ currentHome.guests_included }} guests ,</li>
             <li>{{ currentHome.bedrooms }} bedrooms ,</li>
             <li>{{ currentHome.beds }} beds,</li>
@@ -91,15 +91,15 @@ export default {
           </div>
           <hr class="mt-3 border" />
           <!-- host_url -->
-          <HostDetails :currentHome="currentHome"/>
+          <HostDetails :currentHome="currentHome" />
         </div>
-        <Package :currentHome="currentHome"/>
+        <Package :currentHome="currentHome" class="lg:mt-0 mt-10" />
       </div>
       <hr class="mt-10 border" />
     </div>
-    <div class="container-fluid mx-auto px-16 mt-20">
-       <Reviews :currentHome="currentHome"/>
-       <hr class="mt-10 border" />
+    <div class="container-fluid mx-auto lg:px-16 px-0 mt-20">
+      <Reviews :currentHome="currentHome" />
+      <hr class="mt-10 border" />
     </div>
   </div>
 </template>

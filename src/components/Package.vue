@@ -11,7 +11,7 @@ export default {
 
 <template>
   <div
-    class="w-[500px] h-[450px] border rounded-xl shadow-lg sticky top-28 p-5"
+    class="lg:w-[370px] w-full h-[450px] border rounded-xl shadow-lg sticky top-28 p-5 lg:ml-16"
   >
     <h1 class="font-semibold text-xl text-gray-500">
       <i class="fa-solid fa-euro-sign text-2xl text-black mr-2"></i>
