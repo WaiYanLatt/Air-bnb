@@ -45,22 +45,24 @@ export default {
       <div>
         <h1 class="font-semibold text-lg text-gray-700">Hosting</h1>
         <p class="font-semibold text-gray-500 mt-2">Airbnb your home</p>
-        <p class="font-semibold text-gray-500 mt-2">
-            AirCover for Hosts
-        </p>
+        <p class="font-semibold text-gray-500 mt-2">AirCover for Hosts</p>
         <p class="font-semibold text-gray-500 mt-2">Hosting resources</p>
         <p class="font-semibold text-gray-500 mt-2">Community forum</p>
         <p class="font-semibold text-gray-500 mt-2">Hosting responsibly</p>
-        <p class="font-semibold text-gray-500 mt-2">Airbnb-friendly apartments</p>
+        <p class="font-semibold text-gray-500 mt-2">
+          Airbnb-friendly apartments
+        </p>
       </div>
       <div class="hidden lg:block">
         <h1 class="font-semibold text-lg text-gray-700">Airbnb</h1>
         <p class="font-semibold text-gray-500 mt-2">Newsroom</p>
-        <p class="font-semibold text-gray-500 mt-2">New features </p>
+        <p class="font-semibold text-gray-500 mt-2">New features</p>
         <p class="font-semibold text-gray-500 mt-2">Careers</p>
         <p class="font-semibold text-gray-500 mt-2">Investors</p>
         <p class="font-semibold text-gray-500 mt-2">Gift cards</p>
-        <p class="font-semibold text-gray-500 mt-2">Airbnb.org emergency stays</p>
+        <p class="font-semibold text-gray-500 mt-2">
+          Airbnb.org emergency stays
+        </p>
       </div>
     </div>
   </div>

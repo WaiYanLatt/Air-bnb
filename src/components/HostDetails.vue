@@ -178,7 +178,10 @@ export default {
           <img src="/bed1.jpeg" class="w-full rounded-xl" />
         </swiper-slide>
         <swiper-slide>
-          <img src="/bed2.jpg" class="w-full lg:max-h-[227px] max-h-[200px] rounded-xl" />
+          <img
+            src="/bed2.jpg"
+            class="w-full lg:max-h-[227px] max-h-[200px] rounded-xl"
+          />
         </swiper-slide>
         <swiper-slide>
           <img src="/bed3.webp" class="w-full rounded-xl" />

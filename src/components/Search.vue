@@ -134,16 +134,16 @@ export default {
     </div>
     <div v-if="weather">
       <p
-        v-show="weather.main.temp > 25 "
+        v-show="weather.main.temp > 25"
         class="font-semibold text-sky-500 text-lg mt-3 italic text-right"
       >
         Please Take Some Juice.🥤
       </p>
       <p
-        v-show="weather.main.temp < 25 "
+        v-show="weather.main.temp < 25"
         class="font-semibold text-sky-500 text-lg mt-3 italic text-right"
       >
-       Please Take Some Warm clothes.🧥
+        Please Take Some Warm clothes.🧥
       </p>
     </div>
   </div>
