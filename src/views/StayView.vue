@@ -122,17 +122,17 @@ export default {
           <i class="fa-solid fa-xmark text-2xl"></i>
         </button>
         <div v-for="fav in useStay.fav" :key="fav.id">
-          <div class="mt-5 flex border shadow-md p-3 rounded-md bg-slate-900">
+          <div class="mt-5 flex border items-center justify-between shadow-md p-3 rounded-md bg-slate-900">
             <img
               :src="fav.xl_picture_url"
               alt=""
-              class="w-24 h-24 rounded-lg mr-5"
+              class="w-[100px] h-[100px] object-cover rounded-lg mr-5"
             />
             <div>
               <h1 class="font-semibold text-white text-sm">{{ fav.name }}</h1>
               <h1 class="font-semibold text-white text-sm">
                 <i class="fa-solid fa-euro-sign"></i>
-                <span v-show="fav.price !== null" class="mx-1 font-semibold">
+                <span v-show="fav.price !== null" class="font-semibold">
                   {{ fav.price }}
                 </span>
                 <span v-show="fav.price === null"> 545 </span>
