@@ -3,13 +3,11 @@ import Button from "@/components/Button.vue";
 import useCatagories from "@/pinia/Catagories.js";
 import useStay from "@/pinia/stay";
 import HouseCard from "@/components/HouseCard.vue";
-import favCard from "@/components/favCard.vue";
 
 export default {
   components: {
     Button: Button,
     HouseCard: HouseCard,
-    favCard: favCard,
   },
   data() {
     return {
@@ -131,11 +129,11 @@ export default {
             <div>
               <h1 class="font-semibold text-white text-sm">{{ fav.name }}</h1>
               <h1 class="font-semibold text-white text-sm">
-                <i class="fa-solid fa-euro-sign"></i>
                 <span v-show="fav.price !== null" class="font-semibold">
                   {{ fav.price }}
                 </span>
                 <span v-show="fav.price === null"> 545 </span>
+                Kr DKK
               </h1>
             </div>
           </div>
@@ -152,12 +150,3 @@ export default {
     </div>
   </div>
 </template>
-
-<!-- <img :src="result.thumbnail_url" alt="">
-       <img :src="result.medium_url" alt="">
-       <img :src="result.xl_picture_url" alt="">
-       <img :src="result.url" alt=""> 
-      
-     
-      
-      -->

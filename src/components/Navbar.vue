@@ -1,6 +1,7 @@
 <script>
 import Search from "@/components/Search.vue";
 import Form from "./Form.vue";
+import Login from "./Login.vue";
 
 export default {
   data() {
@@ -12,11 +13,13 @@ export default {
       stay: false,
       onlineExp: false,
       exp: false,
+      login : false,
     };
   },
   components: {
     Search: Search,
     Form: Form,
+    Login : Login,
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
@@ -48,6 +51,7 @@ export default {
     unShow() {
       this.show = false;
       this.showForm = false;
+      this.login = false;
     },
     form() {
       this.showForm = true;
@@ -68,6 +72,9 @@ export default {
       this.exp = false;
       this.onlineExp = true;
     },
+    showLogin() {
+      this.login = true;
+    }
   },
 };
 </script>
@@ -163,6 +170,7 @@ export default {
           <i class="fa-solid fa-globe"></i>
         </button>
         <div
+          @click="showLogin"
           class="border px-5 py-2 rounded-full cursor-pointer duration-500 hover:shadow-lg flex items-center justify-center"
         >
           <i class="fa-solid fa-bars mr-3"></i>
@@ -192,6 +200,15 @@ export default {
         <i class="fa-solid fa-xmark mb-5 text-xl"></i>
       </h1>
       <Form />
+    </div>
+    <div
+     v-show="login === true"
+      class="bg-white object-cover bg-no-repeat animate__backInUp animate__animated rounded-lg border shadow-xl h-auto w-[370px] lg:w-[700px] absolute z-10 top-36 lg:top-28 left-3 lg:left-[22%] p-5 lg:p-10"
+    >
+      <h1 class="text-right text-red-500 cursor-pointer" @click="unShow">
+        <i class="fa-solid fa-xmark mb-5 text-xl"></i>
+      </h1>
+      <login/>
     </div>
   </nav>
 </template>

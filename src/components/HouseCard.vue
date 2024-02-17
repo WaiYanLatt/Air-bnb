@@ -185,12 +185,11 @@ export default {
       </p>
     </div>
     <p class="font-semibold">
-      <i class="fa-solid fa-euro-sign ml-2"></i>
       <span v-show="result.price !== null" class="mx-1">
-        {{ result.price }}
+        {{ result.price }} Kr DKK
       </span>
-      <span v-show="result.price === null"> 545 </span>
-      <span class="text-gray-500 mr-2">night</span>
+      <span v-show="result.price === null"> 545 Kr DKK</span>
+      <span class="text-gray-500 ml-2">night</span>
     </p>
   </div>
 </template>
