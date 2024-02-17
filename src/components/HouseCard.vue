@@ -2,6 +2,7 @@
 import { defineComponent } from "vue";
 import { Carousel, Navigation, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
+import useStay from "@/pinia/stay";
 
 export default {
   components: {
@@ -17,6 +18,7 @@ export default {
   },
   data() {
     return {
+      useStay: useStay(),
       showFav: false,
       settings: {
         itemsToShow: 1,
@@ -41,6 +43,18 @@ export default {
   methods: {
     fullHeart() {
       this.showFav = !this.showFav;
+      const index = this.useStay.fav.findIndex(
+        (res) => res.id === this.result.id
+      );
+
+      if (index === -1) {
+        const guestFav = this.useStay.results.find(
+          (res) => res.id === this.result.id
+        );
+        this.useStay.fav.push(guestFav);
+      } else {
+        this.useStay.fav.splice(index, 1);
+      }
     },
   },
 };

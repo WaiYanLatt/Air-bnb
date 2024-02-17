@@ -3,7 +3,20 @@ const useStay = defineStore("stay", {
   state: () => {
     return {
       results: [],
+      fav : [],
+      country: "",
     };
+  },
+  getters: {
+    getSearch() {
+      if (this.country === "") {
+        return this.results;
+      } else {
+        return this.results.filter((res) =>
+          res.host_location.toLowerCase().includes(this.country.toLowerCase())
+        );
+      }
+    },
   },
   actions: {
     async getStay() {
@@ -30,6 +43,7 @@ const useStay = defineStore("stay", {
       });
       return data.results;
     },
+
 
     setStay(results) {
       this.results = results;

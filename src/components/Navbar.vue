@@ -1,5 +1,6 @@
 <script>
 import Search from "@/components/Search.vue";
+import Form from "./Form.vue";
 
 export default {
   data() {
@@ -7,6 +8,7 @@ export default {
       isNavshow: true,
       isSecond: true,
       show: false,
+      showForm: false,
       stay: false,
       onlineExp: false,
       exp: false,
@@ -14,6 +16,7 @@ export default {
   },
   components: {
     Search: Search,
+    Form: Form,
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
@@ -39,11 +42,16 @@ export default {
         this.isSecond = false;
       }
     },
-    showForm() {
+    showForm1() {
       this.show = true;
     },
     unShow() {
       this.show = false;
+      this.showForm = false;
+    },
+    form() {
+      this.showForm = true;
+      this.$router.push("/");
     },
     showStay() {
       this.stay = true;
@@ -117,6 +125,7 @@ export default {
         >
           <button
             class="font-semibold duration-500 hover:bg-gray-100 py-2 px-5 hover:rounded-full"
+            @click="form"
           >
             AnyWhere
           </button>
@@ -135,7 +144,7 @@ export default {
           <div class="border my-1 mx-3 border-gray-300 hidden"></div>
           <!-- search icon -->
           <button
-            @click="showForm"
+            @click="showForm1"
             class="bg-red-500 h-10 w-10 rounded-full ml-10"
           >
             <i class="fa-solid fa-magnifying-glass text-white"></i>
@@ -174,6 +183,15 @@ export default {
         <i class="fa-solid fa-xmark mb-5 text-xl"></i>
       </h1>
       <Search />
+    </div>
+    <div
+      v-show="showForm === true"
+      class="bg-white object-cover bg-no-repeat animate__backInUp animate__animated rounded-lg border shadow-xl h-auto w-[370px] lg:w-[700px] absolute z-10 top-36 lg:top-28 left-3 lg:left-[22%] p-5 lg:p-10"
+    >
+      <h1 class="text-right text-red-500 cursor-pointer" @click="unShow">
+        <i class="fa-solid fa-xmark mb-5 text-xl"></i>
+      </h1>
+      <Form />
     </div>
   </nav>
 </template>

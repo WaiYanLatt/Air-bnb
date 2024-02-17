@@ -3,11 +3,13 @@ import Button from "@/components/Button.vue";
 import useCatagories from "@/pinia/Catagories.js";
 import useStay from "@/pinia/stay";
 import HouseCard from "@/components/HouseCard.vue";
+import favCard from "@/components/favCard.vue";
 
 export default {
   components: {
     Button: Button,
     HouseCard: HouseCard,
+    favCard: favCard,
   },
   data() {
     return {
@@ -15,6 +17,7 @@ export default {
       useCatagories: useCatagories(),
       useStay: useStay(),
       scrollPage: 0,
+      slideShow: false,
     };
   },
   async created() {
@@ -38,14 +41,35 @@ export default {
         this.scrollPage = 0;
       }
     },
+    favSlide() {
+      this.slideShow = true;
+    },
+    unfavSlide() {
+      this.slideShow = false;
+    },
   },
 };
 </script>
 
 <template>
   <div class="">
+    <div class="fixed right-5 z-10 lg:top-64 top-[17rem]" @click="favSlide">
+      <div class="relative inline-flex w-fit">
+        <div
+          class="absolute bottom-auto left-auto right-0 top-0 z-10 inline-block -translate-y-1/2 translate-x-2/4 rotate-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100 whitespace-nowrap rounded-full bg-slate-700 px-2.5 py-1 text-center align-baseline text-xs font-bold leading-none text-white"
+        >
+          {{ this.useStay.fav.length }}
+        </div>
+        <button
+          type="button"
+          class="px-3 py-3 shadow-xl bg-white ml-5 rounded-lg duration-700 font-semibold"
+        >
+          <i class="fa-solid fa-house-circle-check text-slate-700 text-2xl"></i>
+        </button>
+      </div>
+    </div>
     <div class="bg-white w-full py-3 shadow-lg fixed top-[74px] z-10">
-      <div class="px-16 flex lg:flex-row flex-col items-center">
+      <div class="lg:px-16 flex items-center">
         <div class="flex items-center">
           <button
             v-show="scrollPage > 0"
@@ -79,18 +103,49 @@ export default {
           Filters
         </button>
         <button
-          class="hover:shadow-lg px-5 py-3 ml-5 rounded-lg duration-700 font-semibold border lg:block hidden"
+          class="hover:shadow-lg px-5 py-3 ml-2 rounded-lg duration-700 font-semibold border lg:block hidden"
         >
           Display totals before tax
           <input type="checkbox" class="ml-2 cursor-pointer" />
         </button>
       </div>
     </div>
-    <div class="container mx-auto px-5 lg:mt-56 mt-72 mb-28">
+    <div class="container mx-auto px-5 lg:mt-72 mt-72 mb-28">
+      <div
+        class="w-[350px] h-screen bg-white no-scrollbar duration-1000 transition-all shadow-lg fixed top-0 z-20 right-[-100%] p-5 pt-10 overflow-y-scroll"
+        :class="{ 'right-[0%]': slideShow === true }"
+      >
+        <button
+          class="bg-white w-10 fixed top-3 h-10 rounded-full shadow-sm border flex justify-center items-center"
+          @click="unfavSlide"
+          >
+          <i class="fa-solid fa-xmark text-2xl"></i>
+        </button>
+        <div v-for="fav in useStay.fav" :key="fav.id">
+          <div class="mt-5 flex border shadow-md p-3 rounded-md bg-slate-900">
+            <img
+              :src="fav.xl_picture_url"
+              alt=""
+              class="w-24 h-24 rounded-lg mr-5"
+            />
+            <div>
+              <h1 class="font-semibold text-white text-sm">{{ fav.name }}</h1>
+              <h1 class="font-semibold text-white text-sm">
+                <i class="fa-solid fa-euro-sign"></i>
+                <span v-show="fav.price !== null" class="mx-1 font-semibold">
+                  {{ fav.price }}
+                </span>
+                <span v-show="fav.price === null"> 545 </span>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="grid lg:grid-cols-4 grid-cols-1 gap-4">
         <HouseCard
           :result="result"
-          v-for="result in useStay.results"
+          v-for="result in useStay.getSearch"
           :key="result.id"
         />
       </div>
@@ -101,4 +156,8 @@ export default {
 <!-- <img :src="result.thumbnail_url" alt="">
        <img :src="result.medium_url" alt="">
        <img :src="result.xl_picture_url" alt="">
-       <img :src="result.url" alt=""> -->
+       <img :src="result.url" alt=""> 
+      
+     
+      
+      -->
