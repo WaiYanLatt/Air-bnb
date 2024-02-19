@@ -20,6 +20,7 @@ export default {
       SearchStay: SearchStay(),
       scrollPage: 0,
       slideShow: false,
+      alertShow: false,
     };
   },
   async created() {
@@ -49,12 +50,23 @@ export default {
     unfavSlide() {
       this.slideShow = false;
     },
+    showAlert() {
+      this.alertShow = true;
+      setTimeout(() => {
+        this.alertShow = false;
+      }, 1000);
+    },
   },
 };
 </script>
 
 <template>
   <div class="">
+    <!-- alert box -->
+    <div v-show="alertShow === true" class="bg-red-500 fixed bottom-[30%] z-20 left-[15%] w-[70%] py-5 rounded-lg">
+      <h1 class="text-center font-semibold text-white">PLEASE LOGIN FIRST</h1>
+    </div>
+    <!-- favorite array -->
     <div class="fixed right-5 z-10 lg:top-64 top-[17rem]" @click="favSlide">
       <div class="relative inline-flex w-fit">
         <div
@@ -66,6 +78,7 @@ export default {
         </button>
       </div>
     </div>
+    <!-- button scrollbar -->
     <div class="bg-white w-full py-3 shadow-lg fixed top-[74px] z-10">
       <div class="lg:px-16 flex items-center">
         <div class="flex items-center">
@@ -138,9 +151,9 @@ export default {
           </div>
         </div> -->
       </div>
-
+      <!-- HouseCard -->
       <div class="grid lg:grid-cols-4 grid-cols-1 gap-4">
-        <HouseCard v-if="useStay.location === ''" :result="result" v-for="result in useStay.results" :key="result.id" />
+        <HouseCard v-if="useStay.location === ''" :result="result" @showAlert="showAlert" v-for="result in useStay.results" :key="result.id" />
         <Srp v-else />
       </div>
     </div>
