@@ -15,7 +15,7 @@ const routes = [
       path : '/exp',
       name : 'exprience',
       component : () => import('./views/Exprience.vue')
-   }
+   },
 ]
 
 const router = createRouter({

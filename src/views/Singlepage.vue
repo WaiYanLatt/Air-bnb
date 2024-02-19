@@ -37,33 +37,58 @@ export default {
       </h1>
       <div class="grid lg:grid-cols-2 grid-cols-1 gap-2 mt-10 mb-5">
         <div>
-          <img
-            :src="currentHome.xl_picture_url"
-            alt=""
+          <object
+            :data="currentHome.xl_picture_url"
+            type="image/png"
             class="w-full object-cover lg:h-[410px] h-[250px] lg:rounded-e-none rounded-s-xl rounded-e-xl hover:brightness-75 duration-500 cursor-pointer"
-          />
+          >
+            <img
+              src="/room2.webp"
+              class="w-full object-cover lg:h-[410px] h-[250px] lg:rounded-e-none rounded-s-xl rounded-e-xl hover:brightness-75 duration-500 cursor-pointer"
+            />
+          </object>
         </div>
         <div class="grid grid-cols-2 gap-2">
-          <img
-            :src="currentHome.xl_picture_url"
-            alt=""
+          <object
+            :data="currentHome.xl_picture_url"
+            type="image/png"
             class="w-full object-cover hidden lg:block h-[200px] hover:brightness-75 duration-500 cursor-pointer"
-          />
-          <img
-            :src="currentHome.xl_picture_url"
-            alt=""
-            class="w-full object-cover hidden lg:block h-[200px] hover:brightness-75 duration-500 cursor-pointer lg:rounded-tr-xl rounded-none"
-          />
-          <img
-            :src="currentHome.xl_picture_url"
-            alt=""
+          >
+            <img
+              src="/room2.webp"
+              class="w-full object-cover hidden lg:block h-[200px] hover:brightness-75 duration-500 cursor-pointer"
+            />
+          </object>
+          <object
+            :data="currentHome.xl_picture_url"
+            type="image/png"
             class="w-full object-cover hidden lg:block h-[200px] hover:brightness-75 duration-500 cursor-pointer"
-          />
-          <img
-            :src="currentHome.xl_picture_url"
-            alt=""
-            class="w-full object-cover hidden lg:block h-[200px] hover:brightness-75 duration-500 cursor-pointer lg:rounded-br-xl rounded-none"
-          />
+          >
+            <img
+              src="/room2.webp"
+              class="w-full object-cover hidden lg:block h-[200px] hover:brightness-75 duration-500 cursor-pointer"
+            />
+          </object>
+          <object
+            :data="currentHome.xl_picture_url"
+            type="image/png"
+            class="w-full object-cover hidden lg:block h-[200px] hover:brightness-75 duration-500 cursor-pointer"
+          >
+            <img
+              src="/room2.webp"
+              class="w-full object-cover hidden lg:block h-[200px] hover:brightness-75 duration-500 cursor-pointer"
+            />
+          </object>
+          <object
+            :data="currentHome.xl_picture_url"
+            type="image/png"
+            class="w-full object-cover hidden lg:block h-[200px] hover:brightness-75 duration-500 cursor-pointer"
+          >
+            <img
+              src="/room2.webp"
+              class="w-full object-cover hidden lg:block h-[200px] hover:brightness-75 duration-500 cursor-pointer"
+            />
+          </object>
         </div>
       </div>
       <!-- Room Details -->

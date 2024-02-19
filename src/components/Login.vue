@@ -8,6 +8,7 @@
     />
     <input
       type="password"
+      autocomplete="false"
       class="rounded-lg w-full p-3 mt-3 border-2 border-black focus:outline-none font-semibold"
       placeholder="Enter your password"
     />
