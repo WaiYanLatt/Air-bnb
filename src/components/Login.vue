@@ -61,11 +61,11 @@ export default {
         SIGN UP
       </button>
     </router-link>
-    <h1 v-show="success === true">
-      login sucess
+    <h1 v-show="success === true" class="font-semibold text-lg text-green-500 mt-3 text-right">
+      LOGIN SUCESS
     </h1>
-    <h1 v-show="error === true">
-    login filed
+    <h1 v-show="error === true" class="font-semibold text-lg text-red-500 mt-3 text-right">
+      LOGIN FILLED
     </h1>
   </form>
 </template>

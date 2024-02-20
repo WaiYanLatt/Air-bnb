@@ -2,10 +2,12 @@
 import Search from "@/components/Search.vue";
 import Form from "./Form.vue";
 import Login from "./Login.vue";
+import useUser from "@/pinia/User.js";
 
 export default {
   data() {
     return {
+      useUser: useUser(),
       isNavshow: true,
       isSecond: true,
       show: false,
@@ -13,13 +15,13 @@ export default {
       stay: false,
       onlineExp: false,
       exp: false,
-      login : false,
+      login: false,
     };
   },
   components: {
     Search: Search,
     Form: Form,
-    Login : Login,
+    Login: Login,
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
@@ -74,7 +76,10 @@ export default {
     },
     showLogin() {
       this.login = true;
-    }
+    },
+    logout() {
+      this.useUser.isAuthenicated = false;
+    },
   },
 };
 </script>
@@ -125,8 +130,8 @@ export default {
       class="bg-white container-fluid border-b flex lg:flex-row flex-col lg:px-16 px-5 py-2 items-center"
       :class="{ 'shadow-lg': isNavshow === true }"
     >
-      <div class="flex my-2">
-        <img src="/airbnb.svg" alt="" class="w-24 h-10 lg:mr-56 mr-10" />
+      <div class="flex justify-between my-2">
+        <img src="/airbnb.svg" alt="" class="w-24 h-10 lg:mr-60 mr-3" />
         <div
           class="shadow-md border rounded-full overflow-hidden flex w-[200px] lg:w-[589px]"
         >
@@ -158,11 +163,13 @@ export default {
           </button>
         </div>
       </div>
-      <div class="lg:flex items-center w-full lg:pl-10 hidden">
+      <div class="flex items-center w-full lg:pl-56">
         <button
-          class="font-semibold mr-4 p-3 hover:bg-gray-100 rounded-full duration-500 hover:shadow-md"
+          v-show="useUser.isAuthenicated === true"
+          @click="logout"
+          class="font-semibold mr-5 w-full border px-5 py-3 hover:bg-gray-100 rounded-full duration-500 hover:shadow-md"
         >
-          Airbnb your home
+          LOG OUT
         </button>
         <button
           class="h-10 w-10 hover:shadow-lg rounded-full duration-500 hover:bg-gray-100 flex items-center justify-center mr-3"
@@ -171,13 +178,15 @@ export default {
         </button>
         <div
           @click="showLogin"
-          class="border px-5 py-2 rounded-full cursor-pointer duration-500 hover:shadow-lg flex items-center justify-center"
+          class="border px-5 py-2 rounded-full w-full cursor-pointer duration-500 hover:shadow-lg flex items-center justify-center"
         >
           <i class="fa-solid fa-bars mr-3"></i>
           <div
             class="bg-gray-100 h-10 w-10 rounded-full flex items-center justify-center"
           >
-            <i class="fa-solid fa-user text-gray-400"></i>
+            <i
+              class="fa-solid fa-user text-gray-400"
+            ></i>
           </div>
         </div>
       </div>
@@ -202,13 +211,13 @@ export default {
       <Form />
     </div>
     <div
-     v-show="login === true"
+      v-show="login === true"
       class="bg-white object-cover bg-no-repeat animate__backInUp animate__animated rounded-lg border shadow-xl h-auto w-[370px] lg:w-[700px] absolute z-10 top-36 lg:top-28 left-3 lg:left-[22%] p-5 lg:p-10"
     >
       <h1 class="text-right text-red-500 cursor-pointer" @click="unShow">
         <i class="fa-solid fa-xmark mb-5 text-xl"></i>
       </h1>
-      <login/>
+      <login />
     </div>
   </nav>
 </template>

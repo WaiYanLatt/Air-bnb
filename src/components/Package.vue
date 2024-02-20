@@ -15,9 +15,11 @@ export default {
   >
     <h1 class="font-semibold text-xl text-gray-500">
       <span class="text-2xl text-black" v-show="currentHome.price !== null">
-        {{ currentHome.price }} Kr DKK
+        <i class="fa-solid fa-euro-sign"></i>
+        {{ currentHome.price }} 
       </span>
       <span class="text-2xl text-black" v-show="currentHome.price === null">
+        <i class="fa-solid fa-euro-sign"></i>
         545
       </span>
       / night
@@ -61,10 +63,12 @@ export default {
         </h1>
         <h1 class="text-gray-700 font-semibold underline">
           <span v-show="currentHome.price !== null">
-            {{ currentHome.price * 30 }} Kr DKK
+            <i class="fa-solid fa-euro-sign"></i>
+            {{ currentHome.price * 30 }} 
           </span>
           <span v-show="currentHome.price === null">
-            {{ 545 * 30 }} Kr DKK
+            <i class="fa-solid fa-euro-sign"></i>
+            {{ 545 * 30 }} 
           </span>
         </h1>
       </div>
@@ -72,17 +76,20 @@ export default {
       <div class="flex justify-between mt-2">
         <h1 class="text-gray-700 font-semibold underline">
           <span v-show="currentHome.price !== null">
-            {{ currentHome.price }}  Kr Dkk
+            <i class="fa-solid fa-euro-sign"></i>
+            {{ currentHome.price }}  
           </span>
-          <span v-show="currentHome.price === null"> 545 </span>
+          <span v-show="currentHome.price === null"> <i class="fa-solid fa-euro-sign"></i> 545 </span>
           x {{ currentHome.maximum_nights }} nights
         </h1>
         <h1 class="text-gray-700 font-semibold underline">
           <span v-show="currentHome.price !== null">
-            {{ currentHome.price * currentHome.maximum_nights }} Kr Dkk
+            <i class="fa-solid fa-euro-sign"></i>
+            {{ currentHome.price * currentHome.maximum_nights }} 
           </span>
           <span v-show="currentHome.price === null">
-            {{ 545 * currentHome.maximum_nights }} Kr Dkk
+            <i class="fa-solid fa-euro-sign"></i>
+            {{ 545 * currentHome.maximum_nights }}
           </span>
         </h1>
       </div>
@@ -90,17 +97,20 @@ export default {
       <div class="flex justify-between mt-2">
         <h1 class="text-gray-700 font-semibold underline">
           <span v-show="currentHome.price !== null">
-            {{ currentHome.price }} Kr Dkk
+            <i class="fa-solid fa-euro-sign"></i>
+            {{ currentHome.price }} 
           </span>
-          <span v-show="currentHome.price === null"> 545 Kr Dkk </span>
+          <span v-show="currentHome.price === null"><i class="fa-solid fa-euro-sign"></i> 545 </span>
           x {{ currentHome.minimum_nights }}  nights
         </h1>
         <h1 class="text-gray-700 font-semibold underline">
           <span v-show="currentHome.price !== null">
-            {{ currentHome.price * currentHome.minimum_nights }} Kr Dkk
+            <i class="fa-solid fa-euro-sign"></i>
+            {{ currentHome.price * currentHome.minimum_nights }} 
           </span>
           <span v-show="currentHome.price === null">
-            {{ 545 * currentHome.minimum_nights }} Kr Dkk
+            <i class="fa-solid fa-euro-sign"></i>
+            {{ 545 * currentHome.minimum_nights }}
           </span>
         </h1>
       </div>

@@ -85,7 +85,7 @@ export default {
           English (US)
         </h1>
         <h1 class="font-semibold text-sm lg:block hidden">
-          Kr DKK
+          <i class="fa-solid fa-euro-sign"></i> EUR
         </h1>
         <button
           class="font-semibold text-sm active:underline cursor-pointer"

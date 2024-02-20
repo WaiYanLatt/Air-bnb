@@ -15,10 +15,12 @@ export default {
   },
   methods: {
     addUser() {
-      this.user.id = this.useUser.users.id + 1;
-      this.useUser.createUser(this.user);
-      this.useUser.isAuthenicated = true;
-      this.$router.push("/");
+      if (this.user.name.length !== 0 && this.user.email.length !== 0 && this.user.password.length !== 0) {
+        this.user.id = this.useUser.users.id + 1;
+        this.useUser.createUser(this.user);
+        this.useUser.isAuthenicated = true;
+        this.$router.push("/");
+      }
     },
   },
 };

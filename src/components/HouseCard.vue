@@ -200,9 +200,12 @@ export default {
     </div>
     <p class="font-semibold">
       <span v-show="result.price !== null" class="mx-1">
-        {{ result.price }} Kr DKK
+        <i class="fa-solid fa-euro-sign"></i>
+        {{ result.price }}
       </span>
-      <span v-show="result.price === null"> 545 Kr DKK</span>
+      <span v-show="result.price === null"
+        ><i class="fa-solid fa-euro-sign"></i> 545
+      </span>
       <span class="text-gray-500 ml-2">night</span>
     </p>
   </div>

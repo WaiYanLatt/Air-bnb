@@ -4,19 +4,13 @@ const useUser = defineStore("user", {
     return {
       currentUserID: null,
       isAuthenicated: false,
-      users : [ 
-        {
-          id : 1,
-          email : 'waiyanlatt@gmail.com',
-          password : '12345',
-        }
-      ]
+      users : [ ]
     };
   },
   actions : {
     createUser(user){
       this.users.push(user);
-  },
+    },
   }
 });
 export default useUser;
