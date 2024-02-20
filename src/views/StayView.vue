@@ -67,7 +67,7 @@ export default {
     <!-- alert box -->
     <div
       v-show="alertShow === true"
-      class="bg-red-500 fixed bottom-[30%] z-20 left-[15%] w-[70%] py-5 rounded-lg"
+      class="bg-red-500 fixed lg:bottom-[30%] z-20 bottom-[50%]  w-full lg:w-[70%] lg:py-5 py-10 lg:rounded-lg"
     >
       <h1 class="text-center font-semibold text-white">PLEASE LOGIN FIRST</h1>
     </div>

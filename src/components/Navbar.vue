@@ -90,7 +90,9 @@ export default {
       class="bg-gray-100 py-5 lg:px-28 px-5 border-b-2 border-gray-200"
       v-show="isNavshow === true"
     >
-      <h1 class="font-bold underline lg:text-md text-sm text-center cursor-pointer">
+      <h1
+        class="font-bold underline lg:text-md text-sm text-center cursor-pointer"
+      >
         Learn about Guest Favorites, the most loved homes on AirBnb
       </h1>
     </div>
@@ -184,9 +186,7 @@ export default {
           <div
             class="bg-gray-100 lg:h-10 lg:w-10 w-7 h-7 rounded-full flex items-center justify-center"
           >
-            <i
-              class="fa-solid fa-user text-gray-400"
-            ></i>
+            <i class="fa-solid fa-user text-gray-400"></i>
           </div>
         </div>
       </div>
@@ -212,7 +212,7 @@ export default {
     </div>
     <div
       v-show="login === true"
-      class="bg-white object-cover bg-no-repeat animate__backInUp animate__animated rounded-lg border shadow-xl h-auto w-[370px] lg:w-[700px] absolute z-10 top-36 lg:top-28 left-3 lg:left-[22%] p-5 lg:p-10"
+      class="bg-white object-cover bg-no-repeat animate__backInUp animate__animated rounded-lg border shadow-xl h-auto w-full lg:w-[700px] absolute z-10 top-36 lg:top-28 lg:left-[22%] p-5 lg:p-10"
     >
       <h1 class="text-right text-red-500 cursor-pointer" @click="unShow">
         <i class="fa-solid fa-xmark mb-5 text-xl"></i>
