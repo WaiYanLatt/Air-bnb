@@ -18,7 +18,7 @@ export default {
       scrollLeft: 0,
       useCatagories: useCatagories(),
       useStay: useStay(),
-      useUser : useUser(),
+      useUser: useUser(),
       SearchStay: SearchStay(),
       scrollPage: 0,
       slideShow: false,
@@ -67,12 +67,16 @@ export default {
     <!-- alert box -->
     <div
       v-show="alertShow === true"
-      class="bg-red-500 fixed lg:bottom-[30%] z-20 bottom-[50%]  w-full lg:w-[70%] lg:py-5 py-10 lg:rounded-lg"
+      class="bg-red-500 fixed lg:bottom-[30%] z-20 bottom-[50%] w-full lg:w-[70%] lg:py-5 py-10 lg:rounded-lg"
     >
       <h1 class="text-center font-semibold text-white">PLEASE LOGIN FIRST</h1>
     </div>
     <!-- favorite array button -->
-    <div class="fixed right-5 z-10 lg:top-64 top-[17rem]" v-show="useUser.isAuthenicated === true" @click="favSlide">
+    <div
+      class="fixed right-5 z-10 lg:top-64 top-[17rem]"
+      v-show="useUser.isAuthenicated === true"
+      @click="favSlide"
+    >
       <div class="relative inline-flex w-fit">
         <div
           class="absolute bottom-auto left-auto right-0 top-0 z-10 inline-block -translate-y-1/2 translate-x-2/4 rotate-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100 whitespace-nowrap rounded-full bg-slate-700 px-2.5 py-1 text-center align-baseline text-xs font-bold leading-none text-white"
@@ -88,7 +92,7 @@ export default {
       </div>
     </div>
     <!-- button scrollbar -->
-    <div class="bg-white w-full py-3 shadow-lg fixed top-[74px] z-10">
+    <div class="bg-white w-full py-3 shadow-lg fixed lg:top-[74px] top-[110px] z-10">
       <div class="lg:px-16 flex items-center">
         <div class="flex items-center">
           <button
@@ -130,7 +134,7 @@ export default {
         </button>
       </div>
     </div>
-     <!-- fav card -->
+    <!-- fav card -->
     <div class="container mx-auto px-5 lg:mt-72 mt-72 mb-28">
       <div
         class="w-[350px] h-screen bg-white no-scrollbar duration-1000 transition-all shadow-lg fixed top-0 z-20 right-[-100%] p-5 pt-10 overflow-y-scroll"
