@@ -167,7 +167,7 @@ export default {
         <button
           v-show="useUser.isAuthenicated === true"
           @click="logout"
-          class="font-semibold mr-5 w-full border px-5 py-3 hover:bg-gray-100 rounded-full duration-500 hover:shadow-md"
+          class="font-semibold mr-5 w-full border px-5 lg:py-3 py-1 hover:bg-gray-100 rounded-full duration-500 hover:shadow-md"
         >
           LOG OUT
         </button>
@@ -178,11 +178,11 @@ export default {
         </button>
         <div
           @click="showLogin"
-          class="border px-5 py-2 rounded-full w-full cursor-pointer duration-500 hover:shadow-lg flex items-center justify-center"
+          class="border px-5 py-1 lg:py-2 rounded-full w-full cursor-pointer duration-500 hover:shadow-lg flex items-center justify-center"
         >
           <i class="fa-solid fa-bars mr-3"></i>
           <div
-            class="bg-gray-100 h-10 w-10 rounded-full flex items-center justify-center"
+            class="bg-gray-100 lg:h-10 lg:w-10 w-7 h-7 rounded-full flex items-center justify-center"
           >
             <i
               class="fa-solid fa-user text-gray-400"
