@@ -92,7 +92,7 @@ export default {
       </div>
     </div>
     <!-- button scrollbar -->
-    <div class="bg-white w-full py-3 shadow-lg fixed lg:top-[74px] top-[110px] z-10">
+    <div class="bg-white w-full lg:py-3 py-1 shadow-lg fixed lg:top-[74px] top-[110px] z-10">
       <div class="lg:px-16 flex items-center">
         <div class="flex items-center">
           <button
