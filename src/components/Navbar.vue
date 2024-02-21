@@ -136,7 +136,9 @@ export default {
       :class="{ 'shadow-lg': isNavshow === true }"
     >
       <div class="flex  justify-between my-2">
+        <router-link to="/">
         <img src="/airbnb.svg" alt="" class="w-24 h-10 lg:mr-60 md:mr-10 mr-3" />
+        </router-link>
         <div
           class="shadow-md border rounded-full overflow-hidden flex w-[200px] md:w-[300px] lg:w-[589px]"
         >
