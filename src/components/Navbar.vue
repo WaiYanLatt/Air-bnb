@@ -56,8 +56,10 @@ export default {
       this.login = false;
     },
     form() {
-      this.showForm = true;
-      this.$router.push("/");
+      if (this.useUser.isAuthenicated === true) {
+        this.showForm = true;
+        this.$router.push("/");
+      }
     },
     showStay() {
       this.stay = true;
@@ -165,7 +167,7 @@ export default {
           </button>
         </div>
       </div>
-      <div class="flex items-center w-full lg:pl-56">
+      <div class="flex items-center w-full lg:pl-24">
         <button
           v-show="useUser.isAuthenicated === true"
           @click="logout"

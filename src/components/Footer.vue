@@ -92,7 +92,7 @@ export default {
           @click="showFooter"
         >
           Support & Resources
-          <i class="fa-solid fa-angle-down ml-3"></i>
+          <i class="fa-solid fa-angle-down lg:ml-3"></i>
         </button>
       </div>
     </div>
