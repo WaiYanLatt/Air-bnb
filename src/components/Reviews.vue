@@ -26,7 +26,7 @@ export default {
       </h1>
     </div>
     <!-- Clean reviews -->
-    <div class="mt-10 grid lg:grid-cols-7 grid-cols-2 gap-5 lg:gap-1">
+    <div class="mt-10 grid lg:grid-cols-7 md:grid-cols-4 grid-cols-2 gap-5 lg:gap-1">
       <!-- over all reviews -->
       <div class="px-5 py-3 w-full shadow-lg rounded-lg border">
         <h1 class="font-semibold mb-2">Overall rating</h1>

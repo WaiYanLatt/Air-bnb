@@ -30,7 +30,7 @@ export default {
 </script>
 
 <template>
-  <div class="lg:mt-56 mt-72 container-fluid mx-auto lg:px-16 px-5 mb-32">
+  <div class="lg:mt-56 mt-72 container-fluid mx-auto lg:px-16 md:px-10 px-5 mb-32">
     <div>
       <h1 class="font-semibold text-2xl mt-10">
         {{ currentHome.room_type }} {{ currentHome.property_type }}
@@ -52,21 +52,21 @@ export default {
           <object
             :data="currentHome.xl_picture_url"
             type="image/png"
-            class="w-full object-cover hidden lg:block h-[200px] hover:brightness-75 duration-500 cursor-pointer"
+            class="w-full object-cover md:block hidden lg:block h-[200px] hover:brightness-75 duration-500 cursor-pointer"
           >
             <img
               src="/room2.webp"
-              class="w-full object-cover hidden lg:block h-[200px] hover:brightness-75 duration-500 cursor-pointer"
+              class="w-full object-cover md:block hidden lg:block h-[200px] hover:brightness-75 duration-500 cursor-pointer"
             />
           </object>
           <object
             :data="currentHome.xl_picture_url"
             type="image/png"
-            class="w-full object-cover hidden lg:block h-[200px] hover:brightness-75 duration-500 cursor-pointer"
+            class="w-full object-cover md:block hidden lg:block h-[200px] hover:brightness-75 duration-500 cursor-pointer"
           >
             <img
               src="/room2.webp"
-              class="w-full object-cover hidden lg:block h-[200px] hover:brightness-75 duration-500 cursor-pointer"
+              class="w-full object-cover md:block hidden lg:block h-[200px] hover:brightness-75 duration-500 cursor-pointer"
             />
           </object>
           <object
@@ -92,8 +92,8 @@ export default {
         </div>
       </div>
       <!-- Room Details -->
-      <div class="flex lg:flex-row flex-col relative">
-        <div class="lg:w-[800px] w-full">
+      <div class="flex lg:flex-row md:flex-row flex-col relative">
+        <div class="lg:w-[800px] md:w-[350px] w-full md:p-[15px]">
           <h1 class="font-semibold text-xl">{{ currentHome.name }}</h1>
           <ul
             class="mt-1 lg:w-[410px] w-full font-semibold text-gray-800 text-md grid lg:grid-cols-4 grid-cols-2 *:ml-1"

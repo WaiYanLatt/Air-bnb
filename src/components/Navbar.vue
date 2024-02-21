@@ -132,13 +132,13 @@ export default {
       </div>
     </div>
     <div
-      class="bg-white container-fluid border-b flex lg:flex-row flex-col lg:px-16 px-5 py-2 items-center"
+      class="bg-white container-fluid border-b flex lg:flex-row md:flex-row flex-col lg:px-16 px-5 py-2 items-center"
       :class="{ 'shadow-lg': isNavshow === true }"
     >
-      <div class="flex justify-between my-2">
-        <img src="/airbnb.svg" alt="" class="w-24 h-10 lg:mr-60 mr-3" />
+      <div class="flex  justify-between my-2">
+        <img src="/airbnb.svg" alt="" class="w-24 h-10 lg:mr-60 md:mr-10 mr-3" />
         <div
-          class="shadow-md border rounded-full overflow-hidden flex w-[200px] lg:w-[589px]"
+          class="shadow-md border rounded-full overflow-hidden flex w-[200px] md:w-[300px] lg:w-[589px]"
         >
           <button
             class="font-semibold duration-500 hover:bg-gray-100 py-2 px-5 hover:rounded-full"
