@@ -67,9 +67,9 @@ export default {
     <!-- alert box -->
     <div
       v-show="alertShow === true"
-      class="bg-red-500 fixed lg:bottom-[30%] z-20 bottom-[50%] w-full lg:w-[70%] lg:py-5 py-10 lg:rounded-lg"
+      class="bg-white fixed shadow-lg lg:bottom-[30%] z-20 bottom-[50%] left-[25%] w-[50%] lg:w-[50%] lg:py-5 py-3 rounded-lg"
     >
-      <h1 class="text-center font-semibold text-white">PLEASE LOGIN FIRST</h1>
+      <h1 class="text-center font-semibold text-shadow lg:text-[15px] text-xs">PLEASE LOGIN FIRST</h1>
     </div>
     <!-- favorite array button -->
     <div
@@ -206,3 +206,9 @@ export default {
     </div>
   </div>
 </template>
+
+<style scoped>
+  .text-shadow{
+    text-shadow: 1px 1px 12px rgba(128, 127, 124, 0.71);
+  }
+</style>
