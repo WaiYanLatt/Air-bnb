@@ -81,7 +81,7 @@ export default {
     },
     logout() {
       this.useUser.isAuthenicated = false;
-      this.$router.push('/')
+      this.$router.push("/");
     },
   },
 };
@@ -183,7 +183,7 @@ export default {
         </button>
         <div
           @click="showLogin"
-          class="border px-5 py-1 lg:py-2 rounded-full w-full cursor-pointer duration-500 hover:shadow-lg flex items-center justify-center"
+          class="border px-5 py-1 lg:py-2 rounded-full w-full lg:w-[150px] cursor-pointer duration-500 hover:shadow-lg flex items-center justify-center"
         >
           <i class="fa-solid fa-bars mr-3"></i>
           <div
