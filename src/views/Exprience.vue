@@ -175,7 +175,7 @@ export default {
         </button>
       </div>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-6 lg:gap-3 gap-y-5 mt-10 mb-20">
+    <div class="grid lg:grid-cols-6   md:grid-cols-3 grid-cols-1 lg:gap-3 gap-y-5 mt-10 mb-20">
       <tripCard v-for="trip in useTrip.trips" :key="trip.id" :trip="trip" />
     </div>
   </div>

@@ -28,7 +28,7 @@ export default {
 
 <template>
   <div
-    class="bg-white object-cover rounded-lg border shadow-xl h-auto w-[370px] lg:w-[700px] absolute z-20 top-36 lg:top-28 left-3 lg:left-[22%] p-5 lg:p-10"
+    class="bg-white object-cover lg:rounded-lg border shadow-xl h-auto w-full lg:w-[700px] absolute z-20 top-36 lg:top-28 lg:left-[22%] left-0 p-5 lg:p-10"
   >
     <!-- <h1 class="text-right text-red-500 cursor-pointer" @click="unShow">
         <i class="fa-solid fa-xmark mb-5 text-xl"></i>
@@ -67,8 +67,5 @@ export default {
         CANCEL
       </button>
     </router-link>
-    <div v-for="user in useUser.users">
-      <h1>{{ user.email }}</h1>
-    </div>
   </div>
 </template>

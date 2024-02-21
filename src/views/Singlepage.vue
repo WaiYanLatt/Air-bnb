@@ -32,7 +32,7 @@ export default {
 <template>
   <div class="lg:mt-56 mt-72 container-fluid mx-auto lg:px-16 px-5 mb-32">
     <div>
-      <h1 class="font-semibold text-2xl">
+      <h1 class="font-semibold text-2xl mt-10">
         {{ currentHome.room_type }} {{ currentHome.property_type }}
       </h1>
       <div class="grid lg:grid-cols-2 grid-cols-1 gap-2 mt-10 mb-5">

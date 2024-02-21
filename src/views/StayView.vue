@@ -73,7 +73,7 @@ export default {
     </div>
     <!-- favorite array button -->
     <div
-      class="fixed right-5 z-10 lg:top-64 top-[17rem]"
+      class="fixed right-5 z-10 lg:top-64 top-[23rem]"
       v-show="useUser.isAuthenicated === true"
       @click="favSlide"
     >
@@ -103,7 +103,7 @@ export default {
             <i class="fa-solid fa-angle-left"></i>
           </button>
           <div
-            class="lg:w-[700px] w-[380px] flex text-nowrap bg-transparent overflow-hidden overflow-x-scroll no-scrollbar cursor-pointer"
+            class="lg:w-[700px] md:w-[900px] w-[380px] flex text-nowrap bg-transparent overflow-hidden overflow-x-scroll no-scrollbar cursor-pointer"
           >
             <Button
               class="transtion-all duration-500"
@@ -193,7 +193,7 @@ export default {
         </div> -->
       </div>
       <!-- HouseCard -->
-      <div class="grid lg:grid-cols-4 grid-cols-1 gap-4">
+      <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
         <HouseCard
           v-if="useStay.location === ''"
           :result="result"

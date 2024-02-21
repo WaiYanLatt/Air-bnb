@@ -81,6 +81,7 @@ export default {
     },
     logout() {
       this.useUser.isAuthenicated = false;
+      this.$router.push('/')
     },
   },
 };
